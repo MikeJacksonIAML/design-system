@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Design System</title>
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="design-system-light.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black font-body text-primary">
+    <!-- Hero Section -->
+    <section class="container py-4xl text-center">
+        <h1 class="font-display text-hero text-primary">
+            Premium Design System
+        </h1>
+        <p class="text-large text-secondary my-xl mx-auto" style="max-width: 48rem;">
+            A sophisticated design system built for professional, trust-building experiences with dark elegance and glass morphism.
+        </p>
+        
+        <!-- Theme Toggle Demo -->
+        <div class="flex justify-center gap-lg my-2xl">
+            <button onclick="toggleTheme('dark')" 
+                    class="btn btn-primary hover-lift">Dark Theme</button>
+            <button onclick="toggleTheme('light')" 
+                    class="btn btn-glass hover-lift">Light Theme</button>
+        </div>
+    </section>
+
+    <!-- Components Demo -->
+    <section class="container py-4xl">
+        <h2 class="font-display text-display text-center my-2xl">Components Showcase</h2>
+        
+        <!-- Glass Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-xl my-4xl">
+            <div class="glass-card glass-card-md hover-lift">
+                <h3 class="font-display text-title text-primary my-md">Glass Morphism</h3>
+                <p class="font-body text-body text-secondary">Beautiful glass effects with subtle transparency and blur backgrounds.</p>
+            </div>
+            
+            <div class="glass-card glass-card-md hover-scale">
+                <h3 class="font-display text-title text-primary my-md">Smooth Animations</h3>
+                <p class="font-body text-body text-secondary">Hardware-accelerated transitions that feel premium and responsive.</p>
+            </div>
+            
+            <div class="glass-card glass-card-md hover-glow">
+                <h3 class="font-display text-title text-primary my-md">Typography System</h3>
+                <p class="font-body text-body text-secondary">Playfair Display + Lato with a complete responsive type scale.</p>
+            </div>
+        </div>
+
+        <!-- CDN Usage Section -->
+        <div class="glass-card glass-card-lg text-center my-4xl">
+            <h3 class="font-display text-display text-brand my-xl">Ready to Use via CDN</h3>
+            <p class="text-large text-secondary my-xl">Include this design system in any project with just a few lines</p>
+            
+            <div class="bg-dark p-lg rounded-lg my-xl text-left overflow-x-auto">
+                <pre class="text-accent text-small"><code>&lt;!-- Include the design system --&gt;
+&lt;link rel="stylesheet" href="https://mikejacksoniamil.github.io/design-system/design-system.css"&gt;
+&lt;link rel="stylesheet" href="https://mikejacksoniamil.github.io/design-system/design-system-light.css"&gt;
+
+&lt;!-- Use the components --&gt;
+&lt;div class="glass-card glass-card-md hover-lift"&gt;
+  &lt;h3 class="font-display text-title text-primary"&gt;Your Content&lt;/h3&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+            
+            <div class="flex justify-center gap-lg">
+                <a href="DESIGN_SYSTEM_GUIDE.md" class="btn btn-primary hover-lift">View Documentation</a>
+                <a href="https://github.com/MikeJacksonIAML/design-system" class="btn btn-glass hover-lift">GitHub Repository</a>
+            </div>
+        </div>
+
+        <!-- Feature Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl my-4xl">
+            <div class="text-center">
+                <h4 class="font-display text-headline text-brand my-md">🎨 Dark & Light Themes</h4>
+                <p class="text-body text-secondary">Comprehensive support for both dark and light backgrounds with automatic detection.</p>
+            </div>
+            <div class="text-center">
+                <h4 class="font-display text-headline text-brand my-md">♿ Accessibility First</h4>
+                <p class="text-body text-secondary">Built-in focus states, reduced motion support, and proper contrast ratios.</p>
+            </div>
+            <div class="text-center">
+                <h4 class="font-display text-headline text-brand my-md">🚀 Performance Optimized</h4>
+                <p class="text-body text-secondary">Efficient CSS with minimal bundle size and hardware-accelerated animations.</p>
+            </div>
+            <div class="text-center">
+                <h4 class="font-display text-headline text-brand my-md">📱 Fully Responsive</h4>
+                <p class="text-body text-secondary">Mobile-first design with consistent experience across all device sizes.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleTheme(theme) {
+            const body = document.body;
+            if (theme === 'light') {
+                body.className = 'theme-light font-body text-primary';
+            } else {
+                body.className = 'bg-black font-body text-primary';
+            }
+        }
+    </script>
+</body>
+</html>
