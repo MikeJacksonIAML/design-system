@@ -1,0 +1,455 @@
+/*
+==================================================
+LIGHT THEME EXTENSION FOR PREMIUM DESIGN SYSTEM
+==================================================
+Add this after design-system.css for light background support
+Maintains the same sophisticated aesthetic on light backgrounds
+*/
+
+/* ===== LIGHT THEME VARIABLES ===== */
+:root {
+  /* Light Theme Foundation */
+  --light-background: #ffffff;        /* Pure white background */
+  --light-surface: #f8fafc;          /* Light gray surfaces */
+  --light-surface-elevated: #ffffff;  /* Elevated surfaces */
+  --light-surface-subtle: #f1f5f9;   /* Subtle background variations */
+  
+  /* Light Theme Text Hierarchy */
+  --light-text-primary: #1f2937;     /* Dark text for headlines */
+  --light-text-secondary: #374151;   /* Medium dark for body */
+  --light-text-muted: #6b7280;       /* Gray for captions */
+  --light-text-subtle: #9ca3af;      /* Light gray for dividers */
+  --light-text-disabled: #d1d5db;    /* Disabled states */
+  
+  /* Light Theme Glass Morphism */
+  --light-glass-bg: rgba(255, 255, 255, 0.8);
+  --light-glass-bg-hover: rgba(255, 255, 255, 0.95);
+  --light-glass-border: rgba(0, 0, 0, 0.08);
+  --light-glass-border-hover: rgba(0, 0, 0, 0.12);
+  --light-glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+                        0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --light-glass-shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.15),
+                              0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  
+  /* Light Theme Interactive States */
+  --light-hover-overlay: rgba(0, 0, 0, 0.04);
+  --light-active-glow: rgba(24, 139, 246, 0.15);
+  --light-focus-ring: rgba(24, 139, 246, 0.5);
+  
+  /* Light Theme Testimonial Specific */
+  --light-testimonial-bg: rgba(255, 255, 255, 0.9);
+  --light-testimonial-border: rgba(0, 0, 0, 0.06);
+  --light-testimonial-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== LIGHT THEME CLASSES ===== */
+
+/* Apply light theme to any container */
+.theme-light {
+  background-color: var(--light-background);
+  color: var(--light-text-primary);
+}
+
+/* Light theme text colors */
+.theme-light .text-primary { color: var(--light-text-primary); }
+.theme-light .text-secondary { color: var(--light-text-secondary); }
+.theme-light .text-muted { color: var(--light-text-muted); }
+.theme-light .text-subtle { color: var(--light-text-subtle); }
+.theme-light .text-brand { color: var(--primary-blue); }
+.theme-light .text-accent { color: var(--accent-orange); }
+
+/* Light theme backgrounds */
+.theme-light .bg-black { background-color: var(--light-background); }
+.theme-light .bg-dark { background-color: var(--light-surface); }
+.theme-light .bg-glass { background-color: var(--light-glass-bg); }
+.theme-light .bg-transparent { background-color: transparent; }
+
+/* Light theme glass cards */
+.theme-light .glass-card {
+  background: var(--light-glass-bg);
+  border: 1px solid var(--light-glass-border);
+  box-shadow: var(--light-glass-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--light-text-primary);
+}
+
+.theme-light .glass-card:hover {
+  background: var(--light-glass-bg-hover);
+  border-color: var(--light-glass-border-hover);
+  box-shadow: var(--light-glass-shadow-hover);
+}
+
+/* Light theme buttons */
+.theme-light .btn-primary {
+  background: var(--primary-blue);
+  color: var(--pure-white);
+  border-color: var(--primary-blue);
+}
+
+.theme-light .btn-primary:hover {
+  background: color-mix(in srgb, var(--primary-blue) 90%, black);
+  border-color: color-mix(in srgb, var(--primary-blue) 90%, black);
+}
+
+.theme-light .btn-glass {
+  background: var(--light-glass-bg);
+  border: 1px solid var(--light-glass-border);
+  color: var(--light-text-primary);
+  backdrop-filter: blur(10px);
+}
+
+.theme-light .btn-glass:hover {
+  background: var(--light-glass-bg-hover);
+  border-color: var(--light-glass-border-hover);
+}
+
+/* Light theme active/inactive cards */
+.theme-light .active-card {
+  opacity: 1;
+  transform: scale(1);
+  box-shadow: var(--light-glass-shadow-hover);
+  background: var(--light-glass-bg-hover);
+}
+
+.theme-light .inactive-card {
+  opacity: 0.7;
+  transform: scale(0.98);
+  background: var(--light-glass-bg);
+}
+
+/* Light theme corner brackets */
+.theme-light .corner-bracket {
+  border-color: var(--accent-orange);
+  opacity: 0.9;
+}
+
+/* Light theme dividers */
+.theme-light .divider {
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--light-text-subtle) 50%, 
+    transparent 100%);
+}
+
+/* Light theme carousel components */
+.theme-light .carousel-fade-left {
+  background: linear-gradient(to right, 
+    var(--light-background) 0%, 
+    transparent 100%);
+}
+
+.theme-light .carousel-fade-right {
+  background: linear-gradient(to left, 
+    var(--light-background) 0%, 
+    transparent 100%);
+}
+
+.theme-light .carousel-btn {
+  background: var(--light-glass-bg);
+  border: 1px solid var(--light-glass-border);
+  color: var(--light-text-primary);
+}
+
+.theme-light .carousel-btn:hover {
+  background: var(--light-glass-bg-hover);
+  border-color: var(--light-glass-border-hover);
+}
+
+/* Light theme focus states */
+.theme-light .focus-visible:focus-visible {
+  outline: 2px solid var(--light-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  box-shadow: 0 0 0 4px var(--light-active-glow);
+}
+
+.theme-light .btn:focus-visible {
+  outline: 2px solid var(--light-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Light theme hover effects */
+.theme-light .hover-glow:hover {
+  box-shadow: 0 0 20px var(--light-active-glow);
+}
+
+.theme-light .hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--light-glass-shadow-hover);
+}
+
+/* Light theme marquee */
+.theme-light .marquee-container {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Light theme loading states */
+.theme-light .loading-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ===== AUTOMATIC LIGHT THEME ===== */
+
+/* Automatically apply light theme based on system preference */
+@media (prefers-color-scheme: light) {
+  .theme-auto {
+    background-color: var(--light-background);
+    color: var(--light-text-primary);
+  }
+  
+  .theme-auto .text-primary { color: var(--light-text-primary); }
+  .theme-auto .text-secondary { color: var(--light-text-secondary); }
+  .theme-auto .text-muted { color: var(--light-text-muted); }
+  .theme-auto .text-subtle { color: var(--light-text-subtle); }
+  .theme-auto .text-brand { color: var(--primary-blue); }
+  .theme-auto .text-accent { color: var(--accent-orange); }
+  
+  .theme-auto .bg-black { background-color: var(--light-background); }
+  .theme-auto .bg-dark { background-color: var(--light-surface); }
+  .theme-auto .bg-glass { background-color: var(--light-glass-bg); }
+  
+  .theme-auto .glass-card {
+    background: var(--light-glass-bg);
+    border: 1px solid var(--light-glass-border);
+    box-shadow: var(--light-glass-shadow);
+    color: var(--light-text-primary);
+  }
+  
+  .theme-auto .glass-card:hover {
+    background: var(--light-glass-bg-hover);
+    border-color: var(--light-glass-border-hover);
+    box-shadow: var(--light-glass-shadow-hover);
+  }
+  
+  .theme-auto .btn-glass {
+    background: var(--light-glass-bg);
+    border: 1px solid var(--light-glass-border);
+    color: var(--light-text-primary);
+  }
+  
+  .theme-auto .btn-glass:hover {
+    background: var(--light-glass-bg-hover);
+    border-color: var(--light-glass-border-hover);
+  }
+  
+  .theme-auto .carousel-fade-left {
+    background: linear-gradient(to right, 
+      var(--light-background) 0%, 
+      transparent 100%);
+  }
+  
+  .theme-auto .carousel-fade-right {
+    background: linear-gradient(to left, 
+      var(--light-background) 0%, 
+      transparent 100%);
+  }
+  
+  .theme-auto .active-card {
+    background: var(--light-glass-bg-hover);
+    box-shadow: var(--light-glass-shadow-hover);
+  }
+  
+  .theme-auto .inactive-card {
+    background: var(--light-glass-bg);
+  }
+}
+
+/* ===== MIXED THEME SUPPORT ===== */
+
+/* For sections that need to work on both light and dark */
+.theme-adaptive {
+  background-color: var(--adaptive-bg, var(--background-black));
+  color: var(--adaptive-text, var(--text-primary));
+}
+
+/* Light context overrides */
+.light-context {
+  --adaptive-bg: var(--light-background);
+  --adaptive-text: var(--light-text-primary);
+  --adaptive-glass-bg: var(--light-glass-bg);
+  --adaptive-glass-border: var(--light-glass-border);
+  --adaptive-glass-shadow: var(--light-glass-shadow);
+}
+
+/* Dark context overrides */
+.dark-context {
+  --adaptive-bg: var(--background-black);
+  --adaptive-text: var(--text-primary);
+  --adaptive-glass-bg: var(--glass-bg);
+  --adaptive-glass-border: var(--glass-border);
+  --adaptive-glass-shadow: var(--glass-shadow);
+}
+
+.theme-adaptive .glass-card {
+  background: var(--adaptive-glass-bg);
+  border: 1px solid var(--adaptive-glass-border);
+  box-shadow: var(--adaptive-glass-shadow);
+  color: var(--adaptive-text);
+}
+
+/* ===== TESTIMONIAL SPECIFIC LIGHT THEME ===== */
+
+/* Light theme testimonial cards */
+.theme-light .testimonial-card,
+.light-context .testimonial-card {
+  background: var(--light-testimonial-bg);
+  border: 1px solid var(--light-testimonial-border);
+  box-shadow: var(--light-testimonial-shadow);
+  color: var(--light-text-primary);
+}
+
+.theme-light .testimonial-card blockquote,
+.light-context .testimonial-card blockquote {
+  color: var(--light-text-secondary);
+}
+
+.theme-light .testimonial-card footer,
+.light-context .testimonial-card footer {
+  color: var(--light-text-muted);
+}
+
+.theme-light .testimonial-card:hover,
+.light-context .testimonial-card:hover {
+  background: var(--light-glass-bg-hover);
+  box-shadow: var(--light-glass-shadow-hover);
+}
+
+/* ===== UTILITY CLASSES FOR LIGHT THEME ===== */
+
+/* Light theme specific utilities */
+.light-bg-primary { background-color: var(--light-background); }
+.light-bg-surface { background-color: var(--light-surface); }
+.light-bg-elevated { background-color: var(--light-surface-elevated); }
+
+.light-text-primary { color: var(--light-text-primary); }
+.light-text-secondary { color: var(--light-text-secondary); }
+.light-text-muted { color: var(--light-text-muted); }
+.light-text-subtle { color: var(--light-text-subtle); }
+
+.light-border { border-color: var(--light-glass-border); }
+.light-border-hover:hover { border-color: var(--light-glass-border-hover); }
+
+/* Light theme shadows */
+.light-shadow { box-shadow: var(--light-glass-shadow); }
+.light-shadow-hover:hover { box-shadow: var(--light-glass-shadow-hover); }
+
+/* ===== RESPONSIVE LIGHT THEME ===== */
+
+/* Ensure light theme works across all breakpoints */
+@media (min-width: 640px) {
+  .theme-light .container,
+  .theme-auto .container {
+    padding: 0 var(--space-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .theme-light .container,
+  .theme-auto .container {
+    padding: 0 var(--space-2xl);
+  }
+}
+
+/* ===== REDUCED MOTION SUPPORT ===== */
+@media (prefers-reduced-motion: reduce) {
+  .theme-light *,
+  .theme-light *::before,
+  .theme-light *::after,
+  .theme-auto *,
+  .theme-auto *::before,
+  .theme-auto *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== COMPONENT EXAMPLES ===== */
+
+/*
+LIGHT THEME USAGE EXAMPLES:
+
+<!-- Manual Light Theme -->
+<section class="theme-light">
+  <div class="glass-card glass-card-md hover-lift">
+    <h3 class="font-display text-title text-primary">Light Theme Card</h3>
+    <p class="font-body text-body text-secondary">Content on light background</p>
+  </div>
+</section>
+
+<!-- Automatic Theme Detection -->
+<section class="theme-auto">
+  <div class="glass-card glass-card-md">
+    <h3 class="font-display text-title text-primary">Auto Theme Card</h3>
+    <p class="font-body text-body text-secondary">Adapts to system preference</p>
+  </div>
+</section>
+
+<!-- Adaptive Theme with Context -->
+<section class="theme-adaptive light-context">
+  <div class="glass-card glass-card-md">
+    <h3 class="font-display text-title">Adaptive Card</h3>
+    <p class="font-body text-body">Works on both themes</p>
+  </div>
+</section>
+
+<!-- Light Theme Testimonial -->
+<div class="theme-light">
+  <article class="glass-card glass-card-md relative active-card">
+    <div class="corner-bracket top-left"></div>
+    <div class="corner-bracket top-right"></div>
+    <div class="corner-bracket bottom-left"></div>
+    <div class="corner-bracket bottom-right"></div>
+    <blockquote class="font-body text-body italic text-primary">
+      "This testimonial looks great on light backgrounds"
+    </blockquote>
+    <footer class="text-small text-muted mt-md">
+      <div class="font-medium">Customer Name</div>
+      <div>Title, Company</div>
+    </footer>
+  </article>
+</div>
+
+<!-- Light Theme Button -->
+<div class="theme-light">
+  <button class="btn btn-primary hover-lift">Primary Button</button>
+  <button class="btn btn-glass hover-lift">Glass Button</button>
+</div>
+
+<!-- Light Theme Carousel -->
+<div class="theme-light">
+  <div class="carousel-container">
+    <div class="carousel-fade-left"></div>
+    <div class="carousel-fade-right"></div>
+    <div class="carousel-track">
+      <div class="carousel-item glass-card">Item 1</div>
+      <div class="carousel-item glass-card">Item 2</div>
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn">←</button>
+      <button class="carousel-btn">→</button>
+    </div>
+  </div>
+</div>
+*/
